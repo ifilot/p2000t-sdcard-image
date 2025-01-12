@@ -1,0 +1,26 @@
+name: Nightly Build
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  nightly-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run the build script
+        run: sudo ./create_image.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: p2000t-sd-card.img.zip
+          path: p2000t-sd-card.img.zip
+          retention-days: 1
