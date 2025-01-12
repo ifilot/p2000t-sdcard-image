@@ -11,6 +11,10 @@ jobs:
   nightly-build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # Needed for GitHub Releases
+      actions: write   # Needed for uploading artifacts
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
