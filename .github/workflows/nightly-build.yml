@@ -18,9 +18,12 @@ jobs:
       - name: Run the build script
         run: sudo bash create_image.sh
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Update the nightly release
+        uses: softprops/action-gh-release@v1
         with:
-          name: p2000t-sd-card.img.zip
-          path: p2000t-sd-card.img.zip
-          retention-days: 1
+          files: p2000t-sd-card.img.zip
+          tag_name: nightly
+          release_name: Nightly Build
+          overwrite: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
