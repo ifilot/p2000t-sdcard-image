@@ -46,8 +46,14 @@ rm software-main/cassettes/README.md
 rm -r software-main/cassettes/__support
 cp -r software-main/cassettes/* $ROOT_MOUNT
 
-# download latest firmware
+# download latest firmware (!0x40 variant implied!)
 wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER-0x40.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
+
+# download PRG images
+mkdir $ROOT_MOUNT/PRGPROGS
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/CASDUMP.PRG -O $ROOT_MOUNT/PRGPROGS/CASDUMP.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/HELLOWORLD.PRG -O $ROOT_MOUNT/PRGPROGS/HELLOWORLD.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/MONCRC16.PRG -O $ROOT_MOUNT/PRGPROGS/MONCRC16.PRG
 
 # Step 8: Cleanup
 echo "Unmounting and cleaning up..."
