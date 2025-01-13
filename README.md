@@ -1,8 +1,17 @@
 # P2000T SD-card Image
 
+[![build](https://github.com/ifilot/p2000t-sdcard-image/actions/workflows/nightly-build.yml/badge.svg)](https://github.com/ifilot/p2000t-sdcard-image/actions/workflows/nightly-build.yml)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![discord](https://img.shields.io/discord/1167925678868541451?logo=discord&logoColor=white)](https://discord.gg/YtzJTWYAxy)
+
 This repository provides an SD-card image designed for the 
-[P2000T SD-card cartridge](https://github.com/ifilot/p2000t-sdcard), 
+[P2000T SD-card cartridge](https://github.com/ifilot/p2000t-sdcard-image), 
 containing the latest version of all available cassette files and programs.
+
+> [!TIP] 
+> Have questions or comments about the **P2000T SD-card images**? Join
+> the conversation and chat with the developers on our [Discord
+> server](https://discord.gg/YtzJTWYAxy).
 
 ---
 
@@ -18,6 +27,14 @@ The repository contains:
 
 ### 1. **Download the Latest Image**
 Download the latest SD-card image from [here](https://github.com/ifilot/p2000t-sdcard-image/releases/download/nightly/p2000t-sd-card.img.zip).
+
+> [!NOTE] 
+> The SD-card image is designed with a size of **1 GiB**, ensuring
+> compatibility with all SD cards that have at least **1 GiB** of capacity. 
+> 
+> While expanding the partition is **optional** and not required for 
+> functionality, you can expand it if you'd like the partition to utilize the 
+> entire storage space of your SD card.
 
 ### 2. **Flash the Image to an SD-Card**
 To write the `.img` file to your SD-card, use one of the following tools:
