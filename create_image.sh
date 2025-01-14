@@ -47,7 +47,7 @@ rm -r software-main/cassettes/__support
 cp -r software-main/cassettes/* $ROOT_MOUNT
 
 # download latest firmware (!0x40 variant implied!)
-wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
+wget https://github.com/ifilot/p2000t-sdcard/releases/download/latest-stable/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
 
 # download PRG images
 mkdir $ROOT_MOUNT/PRGPROGS
