@@ -13,6 +13,10 @@ containing the latest version of all available cassette files and programs.
 > the conversation and chat with the developers on our [Discord
 > server](https://discord.gg/YtzJTWYAxy).
 
+> [!NOTE] 
+> * Download the SD-card image **for the latest stable** [here](https://github.com/ifilot/p2000t-sdcard-image/releases/download/nightly/p2000t-sd-card.img.zip)
+> * For release-2.x, use [this image](https://github.com/ifilot/p2000t-sdcard-image/releases/download/release-2/p2000t-sd-card.img.zip)
+
 ---
 
 ## 📂 Contents
