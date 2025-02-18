@@ -26,7 +26,7 @@ echo "Image attached to loop device: $LOOP_DEVICE"
 
 # Step 4: Format the partition as FAT32
 echo "Formatting the partition as FAT32..."
-mkfs.vfat -n $LABEL "${LOOP_DEVICE}p1"
+mkfs.vfat -F 32 -n $LABEL "${LOOP_DEVICE}p1"
 
 # Step 5: Mount and populate partitions
 echo "Mounting partitions..."
