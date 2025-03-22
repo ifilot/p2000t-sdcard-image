@@ -27,7 +27,6 @@ jobs:
         with:
           files: p2000t-sd-card.img.zip
           tag_name: nightly
-          release_name: Nightly Build
           overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,8 +49,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: p2000t-sd-card-release2.img.zip
-          tag_name: release-2
-          release_name: Nightly Build Release 2.x
+          tag_name: nightly
           overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
