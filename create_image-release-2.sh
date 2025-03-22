@@ -6,7 +6,7 @@ set -e  # Exit on error
 rm -rf *.img *.zip software-main
 
 # Configuration
-IMAGE_NAME="p2000t-sd-card.img"
+IMAGE_NAME="p2000t-sd-card-release2.img"
 PARTITION_SIZE="1024MiB"
 FILESYSTEM="fat32"
 LABEL="P2000T"
