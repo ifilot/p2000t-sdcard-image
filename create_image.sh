@@ -43,7 +43,7 @@ echo "P2000T SD-card image" > $ROOT_MOUNT/README.txt
 wget https://github.com/p2000t/software/archive/refs/heads/main.zip -O repository.zip
 unzip -o repository.zip
 rm software-main/cassettes/README.md
-rm -r software-main/cassettes/__support
+rm -r software-main/cassettes/.support
 cp -r software-main/cassettes/* $ROOT_MOUNT
 
 # download latest firmware (!0x40 variant implied!)
