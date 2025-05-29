@@ -30,26 +30,3 @@ jobs:
           overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
-  nightly-build-release-2_x:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: write  # Needed for GitHub Releases
-      actions: write   # Needed for uploading artifacts
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run the build script
-        run: sudo bash create_image-release-2.sh
-
-      - name: Update the nightly release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: p2000t-sd-card-release2.img.zip
-          tag_name: nightly
-          overwrite: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
