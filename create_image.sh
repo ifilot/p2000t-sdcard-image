@@ -38,7 +38,6 @@ mount "${LOOP_DEVICE}p1" $ROOT_MOUNT
 # Step 7: Populate the partitions (customize this part as needed)
 echo "Populating root partition..."
 mkdir -p $ROOT_MOUNT
-echo "P2000T SD-card image" > $ROOT_MOUNT/README.txt
 
 wget https://github.com/p2000t/software/archive/refs/heads/main.zip -O repository.zip
 unzip -o repository.zip
@@ -46,14 +45,15 @@ rm software-main/cassettes/README.md
 rm -r software-main/cassettes/.support
 cp -r software-main/cassettes/* $ROOT_MOUNT
 
-# download latest firmware (!0x40 variant implied!)
-wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
-
 # download PRG images
-mkdir $ROOT_MOUNT/PRGPROGS
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/CASDUMP.PRG -O $ROOT_MOUNT/PRGPROGS/CASDUMP.PRG
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/HELLOWORLD.PRG -O $ROOT_MOUNT/PRGPROGS/HELLOWORLD.PRG
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/MONCRC16.PRG -O $ROOT_MOUNT/PRGPROGS/MONCRC16.PRG
+mkdir $ROOT_MOUNT/99\ PRG\ programma\'s
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/CASDUMP.PRG -O $ROOT_MOUNT/99\ PRG\ programma\'s/CASDUMP.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/HELLOWORLD.PRG -O $ROOT_MOUNT/99\ PRG\ programma\'s/HELLOWORLD.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/MONCRC16.PRG -O $ROOT_MOUNT/99\ PRG\ programma\'s/MONCRC16.PRG
+
+# download latest firmwares (!0x40 variant implied!)
+wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
+wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/EZLAUNCH.BIN -O $ROOT_MOUNT/EZLAUNCH.BIN
 
 # Step 8: Cleanup
 echo "Unmounting and cleaning up..."
