@@ -53,7 +53,7 @@ wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/downloa
 
 # download latest firmwares (!0x40 variant implied!)
 wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
-wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/EZLAUNCH.BIN -O $ROOT_MOUNT/EZLAUNCH.BIN
+wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/EZLAUNCH.BIN -O $ROOT_MOUNT/EZLAUNCH.BIN || true
 
 # Step 8: Cleanup
 echo "Unmounting and cleaning up..."
