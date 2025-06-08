@@ -46,10 +46,10 @@ rm -r software-main/cassettes/.support
 cp -r software-main/cassettes/* $ROOT_MOUNT
 
 # download PRG images
-mkdir $ROOT_MOUNT/99\ SD\ cartridge\ programs
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/CASDUMP.PRG -O $ROOT_MOUNT/99\ SD\ cartridge\ programs/CASDUMP.PRG
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/HELLOWORLD.PRG -O $ROOT_MOUNT/99\ SD\ cartridge\ programs/HELLOWORLD.PRG
-wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/MONCRC16.PRG -O $ROOT_MOUNT/99\ SD\ cartridge\ programs/MONCRC16.PRG
+mkdir $ROOT_MOUNT/SD\ Cartridge\ Programs
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/CASDUMP.PRG -O $ROOT_MOUNT/SD\ Cartridge\ Programs/CASDUMP.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/HELLOWORLD.PRG -O $ROOT_MOUNT/SD\ Cartridge\ Programs/HELLOWORLD.PRG
+wget https://github.com/ifilot/p2000t-sdcard-cartridge-programs/releases/download/latest/MONCRC16.PRG -O $ROOT_MOUNT/SD\ Cartridge\ Programs/MONCRC16.PRG
 
 # download latest firmwares (!0x40 variant implied!)
 wget https://github.com/ifilot/p2000t-sdcard/releases/latest/download/LAUNCHER.BIN -O $ROOT_MOUNT/LAUNCHER.BIN
