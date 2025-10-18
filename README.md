@@ -30,31 +30,45 @@ Download the latest SD-card image from [here](https://github.com/ifilot/p2000t-s
 
 > [!NOTE] 
 > The SD-card image is designed with a size of **1 GiB**, ensuring
-> compatibility with all SD cards that have at least **1 GiB** of capacity. 
+> compatibility with all SD cards that have at least **1 GiB** of capacity.  
 > 
 > While expanding the partition is **optional** and not required for 
 > functionality, you can expand it if you'd like the partition to utilize the 
 > entire storage space of your SD card.
 
-### 2. **Flash the Image to an SD-Card**
-To write the `.img` file to your SD-card, use one of the following tools:
+### 2. **Flash the Image to an SD Card**
+To write the `.img` file to your SD card, use one of the following **raw image writing tools**.  
 
-#### **Option 1: Raspberry Pi Imager**
-1. Download and install the [Raspberry Pi Imager](https://www.raspberrypi.org/software/).
-2. Open the tool, select "Use Custom," and choose the `.img` file.
-3. Insert your SD-card and select it as the target device.
-4. Click "Write" to flash the image.
+> [!WARNING] **Do not use Raspberry Pi Imager** — it modifies the first sector (MBR),
+> altering the partition table and making the resulting SD card unreadable or
+> unbootable for this image.
 
-#### **Option 2: Balena Etcher**
-1. Download and install [Balena Etcher](https://www.balena.io/etcher/).
-2. Open Balena Etcher and select the `.img` file.
-3. Insert your SD-card and choose it as the target device.
-4. Click "Flash" to write the image to the SD-card.
+#### **Option 1: Win32 Disk Imager (Windows)**
+1. Download and install [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/).  
+2. Launch the tool as **Administrator**.  
+3. Click the folder icon and select the `.img` file you downloaded.  
+4. Choose your SD card drive letter under “Device.”  
+5. Click **Write** to begin flashing.  
+6. When complete, safely eject the SD card.
 
-#### **Option 3: `dd` Command (Linux/Mac)**
-1. Open a terminal and run the following command:
+*Win32 Disk Imager performs a raw, bit-for-bit write — ensuring the image is copied exactly as intended.*
+
+#### **Option 2: Balena Etcher (Windows/macOS/Linux)**
+1. Download and install [Balena Etcher](https://www.balena.io/etcher/).  
+2. Open Balena Etcher and select the `.img` file.  
+3. Insert your SD card and choose it as the target device.  
+4. Click **Flash** to write the image to the SD card.  
+
+*Etcher also performs a literal byte-for-byte copy, preserving the original boot structure.*
+
+#### **Option 3: `dd` Command (Linux/macOS)**
+1. Open a terminal and run the following command (replace `/dev/sdX` with your SD card device):  
    ```bash
-   sudo dd if=p2000t-sd-card.img of=/dev/sdX bs=4M status=progress
+      sudo dd if=p2000t-sd-card.img of=/dev/sdX bs=4M status=progress conv=fsync
+   ```
+2. Wait until the process completes.
+3. Safely eject the SD card.
+
 
 ## Formatting SD-card
 
