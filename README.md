@@ -39,7 +39,8 @@ Download the latest SD-card image from [here](https://github.com/ifilot/p2000t-s
 ### 2. **Flash the Image to an SD Card**
 To write the `.img` file to your SD card, use one of the following **raw image writing tools**.  
 
-> [!WARNING] **Do not use Raspberry Pi Imager** — it modifies the first sector (MBR),
+> [!WARNING] 
+> **Do not use Raspberry Pi Imager** — it modifies the first sector (MBR),
 > altering the partition table and making the resulting SD card unreadable or
 > unbootable for this image.
 
